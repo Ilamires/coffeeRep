@@ -30,7 +30,7 @@ class MyWidget(QWidget):
 
     def Change(self):
         for i in range(5):
-            if i <= len(self.result) - 1:
+            if i + (self.page - 1) * 5 <= len(self.result) - 1:
                 eval(f"self.lbl1_{i + 1 + (self.page - 1) * 5}.setText('{self.result[i][0]}')")
                 eval(f"self.lbl2_{i + 1 + (self.page - 1) * 5}.setText('{self.result[i][1]}')")
                 eval(f"self.lbl3_{i + 1 + (self.page - 1) * 5}.setText('{self.result[i][2]}')")
